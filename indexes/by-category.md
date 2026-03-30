@@ -1,4 +1,4 @@
-# Browse By Topic
+# Browse By Category
 
 ## ai
 
@@ -8,6 +8,11 @@
 ## engineering
 
 - [Sample AI GitHub Tips](../content/ai/20260330-sample-ai-github-tips.md) | `note` | 2026-03-30
+
+## general
+
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
 
 ## learning
 

@@ -6,7 +6,19 @@
 
 ## github
 
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
 - [Sample AI GitHub Tips](../content/ai/20260330-sample-ai-github-tips.md) | `note` | 2026-03-30
+
+## openai
+
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
+
+## python
+
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
+- [Openai Python](../content/general/20260330-openai-python.md) | `repo` | 2026-03-30
 
 ## unclassified
 
