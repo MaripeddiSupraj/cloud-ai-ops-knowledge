@@ -173,9 +173,17 @@ def is_url(value: str) -> bool:
     return value.startswith("http://") or value.startswith("https://")
 
 
+def contains_keyword(text: str, keyword: str) -> bool:
+    escaped = re.escape(keyword.lower())
+    if re.fullmatch(r"[a-z0-9]+", keyword.lower()):
+        pattern = rf"(?<![a-z0-9]){escaped}(?![a-z0-9])"
+        return re.search(pattern, text) is not None
+    return keyword.lower() in text
+
+
 def infer_labels(text: str, mapping: dict[str, list[str]]) -> list[str]:
     haystack = text.lower()
-    matches = [label for label, keywords in mapping.items() if any(keyword in haystack for keyword in keywords)]
+    matches = [label for label, keywords in mapping.items() if any(contains_keyword(haystack, keyword) for keyword in keywords)]
     return sorted(matches)
 
 
@@ -234,9 +242,19 @@ def load_registry() -> list[dict]:
     if not REGISTRY.exists():
         return []
     try:
-        return json.loads(REGISTRY.read_text(encoding="utf-8"))
+        rows = json.loads(REGISTRY.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return []
+    legacy_root = ROOT.parent / "bigthing"
+    normalized = []
+    for row in rows:
+        row.setdefault("source_kind", "file")
+        for key in ("source_path", "raw_path", "entry_path"):
+            value = row.get(key)
+            if isinstance(value, str) and str(legacy_root) in value:
+                row[key] = value.replace(str(legacy_root), str(ROOT), 1)
+        normalized.append(row)
+    return normalized
 
 
 def save_registry(entries: list[dict]) -> None:
@@ -473,6 +491,13 @@ def unique_slug(base_slug: str, registry_rows: list[dict]) -> str:
     return slug
 
 
+def existing_entry_for_source(registry_rows: list[dict], source_kind: str, source_path: str) -> dict | None:
+    for row in registry_rows:
+        if row.get("source_kind") == source_kind and row.get("source_path") == source_path:
+            return row
+    return None
+
+
 def ingest_file(
     path: Path,
     dry_run: bool,
@@ -586,6 +611,9 @@ def main() -> int:
         if not path.exists() or not path.is_file():
             print(f"Skipping missing file: {path}")
             continue
+        if not args.dry_run and existing_entry_for_source(registry_rows, "file", str(path)):
+            print(f"Skipping already ingested file: {path}")
+            continue
         entry = ingest_file(
             path,
             dry_run=args.dry_run,
@@ -600,6 +628,9 @@ def main() -> int:
             path.unlink()
 
     for url in urls:
+        if not args.dry_run and existing_entry_for_source(registry_rows, "url", url):
+            print(f"Skipping already ingested URL: {url}")
+            continue
         entry = ingest_url(
             url,
             dry_run=args.dry_run,
