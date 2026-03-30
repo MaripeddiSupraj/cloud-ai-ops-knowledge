@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Sample AI GitHub Tips",
+    "slug": "20260330-sample-ai-github-tips",
+    "created_at": "2026-03-30T15:28:23+05:30",
+    "content_type": "note",
+    "source_name": "sample-ai-github-tips.txt",
+    "source_path": "/Users/maripeddisupraj/Documents/Codex_Work/bigthing/inbox/sample-ai-github-tips.txt",
+    "raw_path": "/Users/maripeddisupraj/Documents/Codex_Work/bigthing/raw/2026/03/20260330-sample-ai-github-tips.txt",
+    "topics": [
+      "ai",
+      "engineering",
+      "learning",
+      "productivity"
+    ],
+    "tools": [
+      "ai",
+      "github"
+    ],
+    "summary": "Note entry about ai, engineering, learning, likely involving ai, github. Seed text: 10 GitHub habits that save engineering teams time. Use pull request templates. Keep README examples updated. Automate checks in GitHub Actions. Document repeatable workflows instea",
+    "entry_path": "/Users/maripeddisupraj/Documents/Codex_Work/bigthing/content/ai/20260330-sample-ai-github-tips.md"
+  }
+]

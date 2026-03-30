@@ -1,0 +1,28 @@
+{
+  "tools": {
+    "github": ["github", "actions", "pull request", "pr", "repo"],
+    "gitlab": ["gitlab", "gitlab ci", "gitlab-ci"],
+    "docker": ["docker", "container", "dockerfile"],
+    "kubernetes": ["k8s", "kubernetes", "helm", "kubectl"],
+    "terraform": ["terraform", "iac", "hcl"],
+    "aws": ["aws", "ec2", "s3", "lambda", "cloudformation"],
+    "azure": ["azure", "aks", "arm template"],
+    "gcp": ["gcp", "gke", "bigquery"],
+    "python": ["python", ".py", "pandas", "fastapi", "django"],
+    "javascript": ["javascript", "node", "react", "next.js", "vue"],
+    "ai": ["openai", "llm", "prompt", "rag", "agent", "gpt"],
+    "devops": ["cicd", "ci/cd", "pipeline", "deployment", "sre"]
+  },
+  "topics": {
+    "ai": ["ai", "llm", "rag", "prompt", "agent", "gpt"],
+    "devops": ["devops", "cicd", "deployment", "infra", "sre"],
+    "cloud": ["cloud", "aws", "azure", "gcp", "saas"],
+    "kubernetes": ["kubernetes", "k8s", "helm", "cluster"],
+    "career": ["career", "job", "interview", "resume", "leadership"],
+    "productivity": ["productivity", "workflow", "focus", "time management"],
+    "engineering": ["engineering", "architecture", "backend", "frontend", "api"],
+    "security": ["security", "vulnerability", "iam", "secrets", "compliance"],
+    "data": ["data", "analytics", "sql", "dashboard", "etl"],
+    "learning": ["guide", "tutorial", "explainer", "roadmap", "tips"]
+  }
+}

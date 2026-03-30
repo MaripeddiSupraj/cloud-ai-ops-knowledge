@@ -1,0 +1,8 @@
+10 GitHub habits that save engineering teams time.
+
+Use pull request templates.
+Keep README examples updated.
+Automate checks in GitHub Actions.
+Document repeatable workflows instead of repeating Slack answers.
+
+This also overlaps with AI-assisted developer workflows because teams can turn repeated review knowledge into reusable prompts and playbooks.
