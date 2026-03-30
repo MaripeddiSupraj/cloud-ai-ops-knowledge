@@ -1,0 +1,21 @@
+# LinkedIn → Knowledge Hub Pipeline dependencies
+
+# LinkedIn content fetching (unofficial API wrapper)
+linkedin-api>=2.1.0
+
+# AI Agent framework
+crewai>=0.28.0
+crewai-tools>=0.1.0
+
+# Ollama Python client (for local LLM)
+ollama>=0.1.7
+
+# LangChain Ollama integration (used by CrewAI)
+langchain-ollama>=0.1.0
+langchain-community>=0.0.38
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# HTTP requests (used for fallback URL fetching)
+requests>=2.31.0
